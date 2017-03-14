@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package devim.protobuf;
+
+
+option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
+option cc_enable_arenas = true;
+option go_package = "github.com/devimteam/proto-utils/wrappers";
+option java_package = "com.devim.protobuf";
+option java_outer_classname = "WrappersProto";
+option java_multiple_files = true;
+option objc_class_prefix = "GPB";
+
+message BigInteger{
+	bytes value=1;
+}
+
+message BigDecimal{
+	uint32 scale=1;
+	BigInteger int_value=2;
+}
