@@ -1,0 +1,8 @@
+.idea
+*.go
+!doc.go
+*.java
+*.scala
+*.php
+*.cs
+*.c
