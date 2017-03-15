@@ -1,1 +1,3 @@
-addSbtPlugin("com.devim" % "sbt-plugin-basesettings" % "1.2.0-SNAPSHOT")
+addSbtPlugin("com.thesamet" % "sbt-protoc" % "0.99.6")
+
+libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.0-pre2"
