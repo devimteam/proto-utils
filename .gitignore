@@ -1,4 +1,5 @@
 .idea
+target/
 *.go
 !doc.go
 *.java

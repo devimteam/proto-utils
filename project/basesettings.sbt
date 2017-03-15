@@ -1,0 +1,1 @@
+addSbtPlugin("com.devim" % "sbt-plugin-basesettings" % "1.2.0-SNAPSHOT")
