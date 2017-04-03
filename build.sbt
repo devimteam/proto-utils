@@ -8,7 +8,7 @@ PB.protoSources in Compile := Seq(baseDirectory.value / "src")
 publishArtifact in Test := false
 publishMavenStyle := true
 publishTo := {
-	val nexus = "http://nexus.devim.team/"
+	val nexus = "https://nexus.devim.team/"
       	if (isSnapshot.value)
         	Some("snapshots" at nexus + "repository/maven-snapshots/")
 	else
@@ -16,6 +16,6 @@ publishTo := {
 }
 credentials += Credentials(Path.userHome / ".sbt" / ".credentials")
 resolvers ++= Seq(
-      "Sonatype Nexus" at "http://nexus.devim.team/repository/maven-public/",
-      "Central Proxy " at "http://nexus.devim.team/repository/maven-central/")
+      "Sonatype Nexus" at "https://nexus.devim.team/repository/maven-public/",
+      "Central Proxy " at "https://nexus.devim.team/repository/maven-central/")
 
