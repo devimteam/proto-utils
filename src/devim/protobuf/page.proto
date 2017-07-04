@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package devim.protobuf;
+
+
+option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
+option cc_enable_arenas = true;
+option go_package = "github.com/devimteam/proto-utils/page";
+option java_package = "com.devim.protobuf";
+option java_outer_classname = "PageProto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+option objc_class_prefix = "GPB";
+
+
+message Page {
+    uint32 total_pages = 1;
+    uint32 total_size = 2;
+    uint32 size = 3;
+    uint32 page = 4;
+}
+
+message Sort {
+    repeated Order orders = 1;
+}
+
+message Order {
+    string column = 1;
+
+    enum Direction {
+        ASC = 0;
+        DESC = 1;
+    }
+
+    Direction direction = 2;
+}
+
+message PageRequest {
+    uint32 page = 1;
+    uint32 size = 2;
+    Sort sort = 3;
+}
+
