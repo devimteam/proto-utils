@@ -15,9 +15,9 @@ option objc_class_prefix = "GPB";
 
 message Page {
     uint32 total_pages = 1;
-    uint32 total_size = 2;
-    uint32 size = 3;
+    uint64 total_size = 2;
     uint32 page = 4;
+    uint64 size = 3;
 }
 
 message Sort {
@@ -37,7 +37,7 @@ message Order {
 
 message PageRequest {
     uint32 page = 1;
-    uint32 size = 2;
+    uint64 size = 2;
     Sort sort = 3;
 }
 
