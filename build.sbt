@@ -21,7 +21,7 @@ lazy val publishSettings = Seq(
 )
 
 
-lazy val root = (project in file("."))
+lazy val protoUtils = (project in file("."))
   .settings(baseSettings)
   .settings(publishSettings)
   .settings(
