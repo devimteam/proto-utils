@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package devim.protobuf.relay;
+
+
+option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
+option cc_enable_arenas = true;
+option go_package = "github.com/devimteam/proto-utils/relay";
+option java_package = "com.devim.protobuf";
+option java_outer_classname = "RelayProto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+option objc_class_prefix = "GPB";
+
+import "google/protobuf/wrappers.proto";
+import "devim/protobuf/page.proto";
+
+
+message Cursor{
+    google.protobuf.StringValue before = 1;
+    google.protobuf.StringValue after = 2;
+    google.protobuf.UInt32Value first = 3;
+    google.protobuf.UInt32Value last = 4;
+}
+
+
+message Page {
+    bool has_next_page = 1;
+    bool has_previous_page = 2;
+    google.protobuf.StringValue start = 3;
+    google.protobuf.StringValue end = 4;
+}
+
+message PageRequest {
+    Cursor cursor = 1;
+    devim.protobuf.Sort sort = 2;
+}
