@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package devim.protobuf;
+
+
+option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
+option cc_enable_arenas = true;
+option go_package = "github.com/devimteam/proto-utils/dadata";
+option java_package = "com.devim.protobuf";
+option java_outer_classname = "DadataProto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+option objc_class_prefix = "GPB";
+
+import "google/protobuf/wrappers.proto";
+
+message Address {
+    google.protobuf.StringValue fias_id = 1;
+    google.protobuf.StringValue country = 2;
+    google.protobuf.StringValue region_type = 3;
+    google.protobuf.StringValue region_type_full = 4;
+    google.protobuf.StringValue region = 5;
+    google.protobuf.StringValue area_type = 6;
+    google.protobuf.StringValue area_type_full = 7;
+    google.protobuf.StringValue area = 8;
+    google.protobuf.StringValue city_type = 9;
+    google.protobuf.StringValue city_type_full = 10;
+    google.protobuf.StringValue city = 11;
+    google.protobuf.StringValue city_district = 12;
+    google.protobuf.StringValue settlement_type = 13;
+    google.protobuf.StringValue settlement_type_full = 14;
+    google.protobuf.StringValue settlement = 15;
+    google.protobuf.StringValue street_type = 16;
+    google.protobuf.StringValue street_type_full = 17;
+    google.protobuf.StringValue street = 18;
+    google.protobuf.StringValue house_type = 19;
+    google.protobuf.StringValue house_type_full = 20;
+    google.protobuf.StringValue house = 21;
+    google.protobuf.StringValue block_type = 22;
+    google.protobuf.StringValue block_type_full = 23;
+    google.protobuf.StringValue block = 24;
+    google.protobuf.StringValue flat_type = 25;
+    google.protobuf.StringValue flat_type_full = 26;
+    google.protobuf.StringValue flat = 27;
+    google.protobuf.StringValue postal_code = 28;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package devim.protobuf;
+
+
+option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
+option cc_enable_arenas = true;
+option go_package = "github.com/devimteam/proto-utils/person";
+option java_package = "com.devim.protobuf";
+option java_outer_classname = "PersonProto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+option objc_class_prefix = "GPB";
+
+enum Gender {
+    UNSET = 0;
+    MALE = 1;
+    FEMALE = 2;
+}
+

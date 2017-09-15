@@ -27,13 +27,14 @@ lazy val protoUtils = (project in file("."))
   .settings(
     name := "proto-utils",
     libraryDependencies ++= Seq(
-      "com.google.protobuf" % "protobuf-java" % "3.3.1" %"protobuf"
+      "com.google.protobuf" % "protobuf-java" % "3.3.1" %"protobuf",
+      "org.scalatest" %% "scalatest" % "3.0.4" % "test"
     ),
-    unmanagedResourceDirectories in Compile += baseDirectory.value /"src",
+    unmanagedResourceDirectories in Compile += baseDirectory.value /"src/main/protobuf",
     includeFilter in (Compile, unmanagedResources) := "*.proto",
 
     PB.protoSources in Compile := Seq(
-      baseDirectory.value /"src"),
+      baseDirectory.value /"src/main/protobuf"),
     PB.targets in Compile := Seq(
       scalapb.gen() -> (sourceManaged in Compile).value
     )
