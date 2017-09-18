@@ -5,7 +5,7 @@ package devim.protobuf;
 
 option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
 option cc_enable_arenas = true;
-option go_package = "github.com/devimteam/proto-utils/time";
+option go_package = "github.com/devimteam/proto-utils";
 option java_package = "com.devim.protobuf";
 option java_outer_classname = "TimeProto";
 option java_multiple_files = true;
