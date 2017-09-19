@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package devim.protobuf;
+
+
+option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
+option cc_enable_arenas = true;
+option go_package = "github.com/devimteam/proto-utils/range";
+option java_package = "com.devim.protobuf";
+option java_outer_classname = "RangeProto";
+option java_multiple_files = true;
+option java_generate_equals_and_hash = true;
+option objc_class_prefix = "GPB";
+
+import "google/protobuf/wrappers.proto";
+
+
+message UInt32Range{
+    google.protobuf.UInt32Value start =1;
+    google.protobuf.UInt32Value end =2;
+}
