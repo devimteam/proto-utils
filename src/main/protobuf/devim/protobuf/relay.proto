@@ -5,7 +5,7 @@ package devim.protobuf.relay;
 
 option csharp_namespace = "Devim.Protobuf.WellKnownTypes";
 option cc_enable_arenas = true;
-option go_package = "github.com/devimteam/proto-utils/relay";
+option go_package = "github.com/devimteam/proto-utils/src/main/go/relay";
 option java_package = "com.devim.protobuf";
 option java_outer_classname = "RelayProto";
 option java_multiple_files = true;
