@@ -16,7 +16,7 @@ import "google/protobuf/wrappers.proto";
 import "devim/protobuf/page.proto";
 
 
-message Cursor{
+message Cursor {
     google.protobuf.StringValue before = 1;
     google.protobuf.StringValue after = 2;
     google.protobuf.UInt32Value first = 3;

@@ -14,7 +14,7 @@ option objc_class_prefix = "GPB";
 
 import "google/protobuf/timestamp.proto";
 
-message Period{
+message Period {
     google.protobuf.Timestamp start = 1;
     google.protobuf.Timestamp end = 2;
 }
