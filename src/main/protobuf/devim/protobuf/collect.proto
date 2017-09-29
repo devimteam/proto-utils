@@ -15,7 +15,12 @@ option objc_class_prefix = "GPB";
 import "google/protobuf/wrappers.proto";
 
 
-message UInt32Range{
-    google.protobuf.UInt32Value start =1;
-    google.protobuf.UInt32Value end =2;
+message UInt32Range {
+    google.protobuf.UInt32Value start = 1;
+    google.protobuf.UInt32Value end = 2;
+}
+
+message UInt64Range {
+    google.protobuf.UInt64Value start = 1;
+    google.protobuf.UInt64Value end = 2;
 }
