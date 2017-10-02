@@ -4,6 +4,7 @@ package _go
 import (
 	"time"
 
+	devim_time "github.com/devimteam/proto-utils/src/main/go/time"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/lib/pq"
@@ -56,4 +57,28 @@ func PqNullTimeToTimestamp(nt pq.NullTime) *timestamp.Timestamp {
 	}
 	t, _ := TimeToProto(nt.Time)
 	return t
+}
+
+func PeriodToProto(p *Period) *devim_time.Period {
+	if p == nil {
+		return nil
+	}
+	start, _ := TimePtrToProto(p.Start)
+	end, _ := TimePtrToProto(p.End)
+	return &devim_time.Period{
+		Start: start,
+		End:   end,
+	}
+}
+
+func ProtoToPeriod(period *devim_time.Period) *Period {
+	if period == nil {
+		return nil
+	}
+	start, _ := ProtoToTimePtr(period.Start)
+	end, _ := ProtoToTimePtr(period.End)
+	return &Period{
+		Start: start,
+		End:   end,
+	}
 }
