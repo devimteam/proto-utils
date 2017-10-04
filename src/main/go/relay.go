@@ -18,11 +18,11 @@ type RelayPage struct {
 }
 
 type RelayPageRequest struct {
-	Cursor Cursor
+	Cursor *Cursor
 	Sort   *Sort
 }
 
-func CursorToProto(cursor Cursor) *relay.Cursor {
+func CursorToProto(cursor *Cursor) *relay.Cursor {
 	return &relay.Cursor{
 		Before: NilStringToProto(cursor.Before),
 		After:  NilStringToProto(cursor.After),
@@ -31,11 +31,11 @@ func CursorToProto(cursor Cursor) *relay.Cursor {
 	}
 }
 
-func ProtoToCursor(cursor *relay.Cursor) Cursor {
+func ProtoToCursor(cursor *relay.Cursor) *Cursor {
 	if cursor == nil {
-		return Cursor{}
+		return nil
 	}
-	return Cursor{
+	return &Cursor{
 		Before: ProtoToNilString(cursor.Before),
 		After:  ProtoToNilString(cursor.After),
 		First:  ProtoToNilUInt32(cursor.First),
@@ -43,7 +43,7 @@ func ProtoToCursor(cursor *relay.Cursor) Cursor {
 	}
 }
 
-func RelayPageToProto(page RelayPage) *relay.Page {
+func RelayPageToProto(page *RelayPage) *relay.Page {
 	return &relay.Page{
 		Start:           NilStringToProto(page.Start),
 		End:             NilStringToProto(page.End),
@@ -52,11 +52,11 @@ func RelayPageToProto(page RelayPage) *relay.Page {
 	}
 }
 
-func ProtoToRelayPage(protoPage *relay.Page) (page RelayPage) {
+func ProtoToRelayPage(protoPage *relay.Page) (page *RelayPage) {
 	if protoPage == nil {
-		return RelayPage{}
+		return nil
 	}
-	return RelayPage{
+	return &RelayPage{
 		Start:           ProtoToNilString(protoPage.Start),
 		End:             ProtoToNilString(protoPage.End),
 		HasPreviousPage: protoPage.HasPreviousPage,
