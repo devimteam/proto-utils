@@ -99,3 +99,21 @@ func ProtoToNilInt32(d *wrappers.Int32Value) *int32 {
 	t := d.Value
 	return &t
 }
+
+func NilBoolToProto(d *bool) *wrappers.BoolValue {
+	if d == nil {
+		return nil
+	}
+	return &wrappers.BoolValue{
+		Value: *d,
+	}
+}
+
+func ProtoToNilBool(d *wrappers.BoolValue) *bool {
+	if d == nil {
+		return nil
+	}
+	t := d.Value
+	return &t
+}
+
