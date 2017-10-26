@@ -75,8 +75,20 @@ func ProtoToAddressPtr(protoAddress *dadata.Address) (*Address, error) {
 	if protoAddress == nil {
 		return nil, nil
 	}
+	addr, err := ProtoToAddress(protoAddress)
+	if err != nil {
+		return nil, err
+	}
 
-	return &Address{
+	return &addr, nil
+}
+
+func ProtoToAddress(protoAddress *dadata.Address) (Address, error) {
+	if protoAddress == nil {
+		return Address{}, nil
+	}
+
+	return Address{
 		FiasID:             ProtoToNilString(protoAddress.FiasId),
 		Country:            ProtoToNilString(protoAddress.Country),
 		RegionType:         ProtoToNilString(protoAddress.RegionType),
