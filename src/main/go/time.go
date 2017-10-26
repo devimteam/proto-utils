@@ -20,6 +20,9 @@ func TimeToProto(t time.Time) (*timestamp.Timestamp, error) {
 }
 
 func ProtoToTime(t *timestamp.Timestamp) (time.Time, error) {
+	if t == nil {
+		return time.Time{}, nil
+	}
 	return ptypes.Timestamp(t)
 }
 
