@@ -19,11 +19,22 @@ func TimeToProto(t time.Time) (*timestamp.Timestamp, error) {
 	return ptypes.TimestampProto(t)
 }
 
-func ProtoToTime(t *timestamp.Timestamp) (time.Time, error) {
+// loc is optional slice for reverse compatibility
+func ProtoToTime(t *timestamp.Timestamp, loc ...*time.Location) (timestamp time.Time, err error) {
 	if t == nil {
 		return time.Time{}, nil
 	}
-	return ptypes.Timestamp(t)
+
+	timestamp, err = ptypes.Timestamp(t)
+	if err != nil {
+		return
+	}
+
+	if len(loc) == 1 && loc[0] != nil {
+		timestamp = timestamp.In(loc[0])
+	}
+
+	return
 }
 
 func TimePtrToProto(t *time.Time) (*timestamp.Timestamp, error) {
@@ -33,11 +44,11 @@ func TimePtrToProto(t *time.Time) (*timestamp.Timestamp, error) {
 	return TimeToProto(*t)
 }
 
-func ProtoToTimePtr(t *timestamp.Timestamp) (*time.Time, error) {
+func ProtoToTimePtr(t *timestamp.Timestamp, loc ...*time.Location) (*time.Time, error) {
 	if t == nil {
 		return nil, nil
 	}
-	tm, err := ProtoToTime(t)
+	tm, err := ProtoToTime(t, loc...)
 	return &tm, err
 }
 
