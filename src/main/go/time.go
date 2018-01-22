@@ -97,6 +97,8 @@ func ProtoToPeriod(period *devim_time.Period) *Period {
 	}
 }
 
+// ManyTimesToProto converts many time.Time or *time.Time to Timestamp.
+// Function converts every variable or returns on any error.
 func ManyTimesToProto(times ...interface{}) ([]*timestamp.Timestamp, error) {
 	var list []*timestamp.Timestamp
 	for _, t := range times {
