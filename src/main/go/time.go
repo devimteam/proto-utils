@@ -85,3 +85,24 @@ func ProtoToPeriod(period *devim_time.Period) *Period {
 		End:   end,
 	}
 }
+
+func ManyTimesToProto(times ...interface{}) ([]*timestamp.Timestamp, error) {
+	var list []*timestamp.Timestamp
+	for _, t := range times {
+		switch tt := t.(type) {
+		case time.Time:
+			ts, err := TimeToProto(tt)
+			if err != nil {
+				return nil, err
+			}
+			list = append(list, ts)
+		case *time.Time:
+			ts, err := TimePtrToProto(tt)
+			if err != nil {
+				return nil, err
+			}
+			list = append(list, ts)
+		}
+	}
+	return list, nil
+}
