@@ -4,34 +4,34 @@ package _go
 import "github.com/devimteam/proto-utils/src/main/go/dadata"
 
 type Address struct {
-	FiasID             *string
-	Country            *string
-	RegionType         *string
-	RegionTypeFull     *string
-	Region             *string
-	AreaType           *string
-	AreaTypeFull       *string
-	Area               *string
-	CityType           *string
-	CityTypeFull       *string
-	City               *string
-	CityDistrict       *string
-	SettlementType     *string
-	SettlementTypeFull *string
-	Settlement         *string
-	StreetType         *string
-	StreetTypeFull     *string
-	Street             *string
-	HouseType          *string
-	HouseTypeFull      *string
-	House              *string
-	BlockType          *string
-	BlockTypeFull      *string
-	Block              *string
-	FlatType           *string
-	FlatTypeFull       *string
-	Flat               *string
-	PostalCode         *string
+	FiasID             *string `json:"fias_id"`
+	Country            *string `json:"country"`
+	RegionType         *string `json:"region_type"`
+	RegionTypeFull     *string `json:"region_type_full"`
+	Region             *string `json:"region"`
+	AreaType           *string `json:"area_type"`
+	AreaTypeFull       *string `json:"area_type_full"`
+	Area               *string `json:"area"`
+	CityType           *string `json:"city_type"`
+	CityTypeFull       *string `json:"city_type_full"`
+	City               *string `json:"city"`
+	CityDistrict       *string `json:"city_district"`
+	SettlementType     *string `json:"settlement_type"`
+	SettlementTypeFull *string `json:"settlement_type_full"`
+	Settlement         *string `json:"settlement"`
+	StreetType         *string `json:"street_type"`
+	StreetTypeFull     *string `json:"street_type_full"`
+	Street             *string `json:"street"`
+	HouseType          *string `json:"house_type"`
+	HouseTypeFull      *string `json:"house_type_full"`
+	House              *string `json:"house"`
+	BlockType          *string `json:"block_type"`
+	BlockTypeFull      *string `json:"block_type_full"`
+	Block              *string `json:"block"`
+	FlatType           *string `json:"flat_type"`
+	FlatTypeFull       *string `json:"flat_type_full"`
+	Flat               *string `json:"flat"`
+	PostalCode         *string `json:"postal_code"`
 }
 
 func AddressPtrToProto(address *Address) (*dadata.Address, error) {
