@@ -27,6 +27,17 @@ type PageRequest struct {
 	Sort *Sort
 }
 
+func NewSort(orders ...*Order) *Sort {
+	return &Sort{Orders: orders}
+}
+
+func NewOrder(column string, direction page.Order_Direction) *Order {
+	return &Order{
+		Column:    column,
+		Direction: uint32(direction),
+	}
+}
+
 func OrderToProto(o *Order) *page.Order {
 	if o == nil {
 		return nil
